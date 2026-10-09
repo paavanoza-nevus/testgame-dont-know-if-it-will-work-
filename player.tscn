@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://b4ev5f6llgd43" path="res://player.gd" id="1_i3pqv"]
 [ext_resource type="Texture2D" uid="uid://pxi5edlcvqf4" path="res://assets/brackeys_platformer_assets/sprites/knight.png" id="1_onrkg"]
-[ext_resource type="Script" uid="uid://bneocpnpbbyl0" path="res://animated_sprite_2d.gd" id="2_i3pqv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lik2q"]
 atlas = ExtResource("1_onrkg")
@@ -147,7 +146,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_n8o1s")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"roll",
 "speed": 10.0
 }, {
@@ -181,6 +180,20 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="GDScript" id="GDScript_onrkg"]
+script/source = "extends AnimatedSprite2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_5u4nw"]
 radius = 5.0
 
@@ -191,8 +204,8 @@ script = ExtResource("1_i3pqv")
 texture_filter = 1
 position = Vector2(0, -12)
 sprite_frames = SubResource("SpriteFrames_ebjeb")
-animation = &"idle"
-script = ExtResource("2_i3pqv")
+animation = &"roll"
+script = SubResource("GDScript_onrkg")
 
 [node name="Collision" type="CollisionShape2D" parent="." unique_id=1293021756]
 position = Vector2(0, -6)
