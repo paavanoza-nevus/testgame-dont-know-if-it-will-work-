@@ -1,12 +1,133 @@
 [gd_scene format=3 uid="uid://cx2hp4cgo70kp"]
 
 [ext_resource type="PackedScene" uid="uid://didtsbd4y00om" path="res://player.tscn" id="1_wtcfe"]
+[ext_resource type="Texture2D" uid="uid://cfnu7jtidotpt" path="res://assets/Cute_Fantasy_Free/Tiles/Beach_Tile.png" id="2_4d7sh"]
+[ext_resource type="Texture2D" uid="uid://ddbm4ge6s4ys0" path="res://assets/Cute_Fantasy_Free/Tiles/Cliff_Tile.png" id="3_ir8iy"]
+[ext_resource type="Texture2D" uid="uid://3ctyhhywoi2" path="res://assets/Cute_Fantasy_Free/Tiles/FarmLand_Tile.png" id="4_hqns4"]
+[ext_resource type="Texture2D" uid="uid://dmmpstxrr4otl" path="res://assets/Cute_Fantasy_Free/Tiles/Grass_Middle.png" id="5_x0ka3"]
+[ext_resource type="Texture2D" uid="uid://cdttiqctlctn1" path="res://assets/Cute_Fantasy_Free/Tiles/Path_Middle.png" id="6_0h7mo"]
+[ext_resource type="Texture2D" uid="uid://ck8owl5wgn3r3" path="res://assets/Cute_Fantasy_Free/Tiles/Path_Tile.png" id="7_nr8wp"]
+[ext_resource type="Texture2D" uid="uid://b8jxucws28qi7" path="res://assets/Cute_Fantasy_Free/Tiles/Water_Middle.png" id="8_d2bti"]
+[ext_resource type="Texture2D" uid="uid://ba0ocox8s3oqd" path="res://assets/Cute_Fantasy_Free/Tiles/Water_Tile.png" id="9_ta5nu"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_flf07"]
+texture = ExtResource("2_4d7sh")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k73cj"]
+texture = ExtResource("3_ir8iy")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rjqkl"]
+texture = ExtResource("4_hqns4")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fs4d3"]
+texture = ExtResource("5_x0ka3")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7vxoj"]
+texture = ExtResource("6_0h7mo")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ei405"]
+texture = ExtResource("7_nr8wp")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e8dv2"]
+texture = ExtResource("8_d2bti")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2nhjh"]
+texture = ExtResource("9_ta5nu")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_m0aaf"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_flf07")
+sources/1 = SubResource("TileSetAtlasSource_k73cj")
+sources/2 = SubResource("TileSetAtlasSource_rjqkl")
+sources/3 = SubResource("TileSetAtlasSource_fs4d3")
+sources/4 = SubResource("TileSetAtlasSource_7vxoj")
+sources/5 = SubResource("TileSetAtlasSource_ei405")
+sources/6 = SubResource("TileSetAtlasSource_e8dv2")
+sources/7 = SubResource("TileSetAtlasSource_2nhjh")
 
 [node name="Game" type="Node2D" unique_id=135457802]
 
 [node name="Player" parent="." unique_id=1812943038 instance=ExtResource("1_wtcfe")]
-position = Vector2(48, 73)
+position = Vector2(50, 76)
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=971354991]
-position = Vector2(47, 69)
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=971354991]
+position = Vector2(0, -4)
 zoom = Vector2(4, 4)
+position_smoothing_enabled = true
+
+[node name="TileMap" type="TileMap" parent="." unique_id=915096155]
+tile_set = SubResource("TileSet_m0aaf")
+format = 2
