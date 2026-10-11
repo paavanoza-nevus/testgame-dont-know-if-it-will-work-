@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://bm4bmh8n87wbb"]
 
 [ext_resource type="Theme" uid="uid://dt2ayxgtde4ju" path="res://new_theme.tres" id="1_06t4h"]
+[ext_resource type="PackedScene" uid="uid://6gr3nehtnlxl" path="res://scenes/animated_button.tscn" id="2_ekxnf"]
+[ext_resource type="Script" uid="uid://dsan7tqio1fsb" path="res://scenes/main_menu.gd" id="2_wu84c"]
+[ext_resource type="PackedScene" uid="uid://brv1pappmockl" path="res://scenes/flipped_animated_button.tscn" id="3_bqqt6"]
 
 [node name="MainMenu" type="Control" unique_id=499906690]
 layout_mode = 3
@@ -10,12 +13,13 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_06t4h")
+script = ExtResource("2_wu84c")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1137498650]
 layout_mode = 0
 offset_right = 1148.0
 offset_bottom = 645.0
-color = Color(0.045040645, 0.27515304, 0.26812696, 1)
+color = Color(0.110048376, 0.5078071, 0.49439764, 1)
 
 [node name="Panel" type="Panel" parent="." unique_id=2141078388]
 layout_mode = 1
@@ -40,24 +44,28 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
-[node name="Button" type="Button" parent="Panel/VBoxContainer" unique_id=1756333216]
-custom_minimum_size = Vector2(400, 100)
+[node name="Play" parent="Panel/VBoxContainer" unique_id=1004576768 instance=ExtResource("2_ekxnf")]
 layout_mode = 2
-size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 48
-text = "PLAY"
 
-[node name="Button2" type="Button" parent="Panel/VBoxContainer" unique_id=909602582]
-custom_minimum_size = Vector2(400, 100)
+[node name="Tutorial" parent="Panel/VBoxContainer" unique_id=38898103 instance=ExtResource("3_bqqt6")]
 layout_mode = 2
-size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 48
 text = "TUTORIAL"
 
-[node name="Button3" type="Button" parent="Panel/VBoxContainer" unique_id=194034820]
-custom_minimum_size = Vector2(400, 100)
+[node name="Settings" parent="Panel/VBoxContainer" unique_id=1720149552 instance=ExtResource("2_ekxnf")]
 layout_mode = 2
-size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 48
-text = "SETTINGS
-"
+text = "SETTINGS"
+
+[node name="Label" type="Label" parent="." unique_id=1464383350]
+layout_mode = 0
+offset_left = 158.0
+offset_top = 43.0
+offset_right = 990.0
+offset_bottom = 193.0
+theme_override_colors/font_color = Color(0.019925633, 0.019925632, 0.019925632, 1)
+theme_override_constants/outline_size = 14
+theme_override_font_sizes/font_size = 104
+text = "TESTGAME"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Panel/VBoxContainer/Play" to="." method="_on_play_pressed"]

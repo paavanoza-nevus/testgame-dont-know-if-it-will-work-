@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://crxo4gk0hk2qj"]
+
+[ext_resource type="Script" uid="uid://dbhjbwxt6lkel" path="res://scripts/settings.gd" id="1_5p8wc"]
+
+[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_r6d6q"]
+
+[node name="Settings" type="Control" unique_id=560821612]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5p8wc")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1790769953]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1632088350]
+layout_mode = 2
+
+[node name="Volume_Label" type="Label" parent="MarginContainer/VBoxContainer" unique_id=171583788]
+layout_mode = 2
+text = "Volume"
+horizontal_alignment = 1
+
+[node name="Volume" type="HSlider" parent="MarginContainer/VBoxContainer" unique_id=923385618]
+layout_mode = 2
+
+[node name="Mute_Label" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1036508968]
+layout_mode = 2
+text = "Mute"
+
+[node name="Mute" type="CheckBox" parent="MarginContainer/VBoxContainer" unique_id=696593957]
+layout_mode = 2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=470470908]
+stream = SubResource("AudioStreamPlaylist_r6d6q")
+
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/Volume" to="." method="_on_volume_value_changed"]
+[connection signal="toggled" from="MarginContainer/VBoxContainer/Mute" to="." method="_on_mute_toggled"]

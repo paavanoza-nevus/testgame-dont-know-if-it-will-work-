@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://ctv0ill7s1xqe"]
+
+[ext_resource type="Theme" uid="uid://dt2ayxgtde4ju" path="res://new_theme.tres" id="1_lyibd"]
+[ext_resource type="Script" uid="uid://dsan7tqio1fsb" path="res://scenes/main_menu.gd" id="2_onb27"]
+[ext_resource type="PackedScene" uid="uid://6gr3nehtnlxl" path="res://scenes/animated_button.tscn" id="3_beodu"]
+[ext_resource type="PackedScene" uid="uid://brv1pappmockl" path="res://scenes/flipped_animated_button.tscn" id="4_pi3ub"]
+
+[node name="MainMenu" type="Control" unique_id=499906690]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_lyibd")
+script = ExtResource("2_onb27")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1137498650]
+layout_mode = 0
+offset_top = -1.0
+offset_right = 1148.0
+offset_bottom = 719.0
+color = Color(0.110048376, 0.5078071, 0.49439764, 1)
+
+[node name="Panel" type="Panel" parent="." unique_id=2141078388]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -309.0
+offset_top = -428.0
+offset_right = 303.0
+offset_bottom = -47.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=1904263955]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Play" parent="Panel/VBoxContainer" unique_id=1004576768 instance=ExtResource("3_beodu")]
+layout_mode = 2
+
+[node name="Tutorial" parent="Panel/VBoxContainer" unique_id=38898103 instance=ExtResource("4_pi3ub")]
+layout_mode = 2
+text = "TUTORIAL"
+
+[node name="Settings" parent="Panel/VBoxContainer" unique_id=1720149552 instance=ExtResource("3_beodu")]
+layout_mode = 2
+text = "SETTINGS"
+
+[node name="Label" type="Label" parent="." unique_id=1464383350]
+layout_mode = 0
+offset_left = 158.0
+offset_top = 43.0
+offset_right = 990.0
+offset_bottom = 193.0
+theme_override_colors/font_color = Color(0.019925633, 0.019925632, 0.019925632, 1)
+theme_override_constants/outline_size = 14
+theme_override_font_sizes/font_size = 104
+text = "TESTGAME"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Panel/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
