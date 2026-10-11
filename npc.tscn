@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://ca121dct4043g"]
+
+[ext_resource type="Script" uid="uid://6voe0ro8ombp" path="res://npc.gd" id="1_ideak"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xxcha"]
+load_path = "res://.godot/imported/Player.png-1f2fcf4e1e1ba5bfca826a182bb8f50e.ctex"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_m0aaf"]
+radius = 11.045361
+
+[node name="NPC" type="Area2D" unique_id=316230402]
+script = ExtResource("1_ideak")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1262981829]
+position = Vector2(0.4999988, -8.000004)
+scale = Vector2(0.9635416, 0.95)
+texture = SubResource("CompressedTexture2D_xxcha")
+hframes = 6
+vframes = 10
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1501860067]
+position = Vector2(0, -10)
+shape = SubResource("CircleShape2D_m0aaf")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
