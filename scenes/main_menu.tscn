@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://bm4bmh8n87wbb"]
+
+[ext_resource type="Theme" uid="uid://dt2ayxgtde4ju" path="res://new_theme.tres" id="1_06t4h"]
+
+[node name="MainMenu" type="Control" unique_id=499906690]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_06t4h")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1137498650]
+layout_mode = 0
+offset_right = 1148.0
+offset_bottom = 645.0
+color = Color(0.045040645, 0.27515304, 0.26812696, 1)
+
+[node name="Panel" type="Panel" parent="." unique_id=2141078388]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -309.0
+offset_top = -428.0
+offset_right = 303.0
+offset_bottom = -47.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=1904263955]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Button" type="Button" parent="Panel/VBoxContainer" unique_id=1756333216]
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 48
+text = "PLAY"
+
+[node name="Button2" type="Button" parent="Panel/VBoxContainer" unique_id=909602582]
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 48
+text = "TUTORIAL"
+
+[node name="Button3" type="Button" parent="Panel/VBoxContainer" unique_id=194034820]
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 48
+text = "SETTINGS
+"

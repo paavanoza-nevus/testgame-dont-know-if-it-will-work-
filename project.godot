@@ -17,6 +17,7 @@ config/features=PackedStringArray("4.7", "Forward Plus")
 [autoload]
 
 DialogueUI="*uid://d1y0eq4bqaerj"
+MainMenu="*uid://bm4bmh8n87wbb"
 
 [display]
 

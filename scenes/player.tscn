@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://didtsbd4y00om"]
 
-[ext_resource type="Script" uid="uid://b4ev5f6llgd43" path="res://player.gd" id="1_i3pqv"]
+[ext_resource type="Script" uid="uid://b4ev5f6llgd43" path="res://scripts/player.gd" id="1_i3pqv"]
 [ext_resource type="Texture2D" uid="uid://b5va66s76tus" path="res://assets/Cute_Fantasy_Free/Player/Player.png" id="2_onrkg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i3pqv"]
