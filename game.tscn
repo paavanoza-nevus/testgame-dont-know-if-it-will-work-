@@ -11,6 +11,16 @@
 [ext_resource type="Texture2D" uid="uid://ba0ocox8s3oqd" path="res://assets/Cute_Fantasy_Free/Tiles/Water_Tile.png" id="9_boyg6"]
 [ext_resource type="PackedScene" uid="uid://ca121dct4043g" path="res://npc.tscn" id="10_e36ub"]
 [ext_resource type="Script" uid="uid://dv0l72nso3hyk" path="res://dialogue_ui.gd" id="11_hb5m1"]
+[ext_resource type="Script" uid="uid://cvri0kdmldru4" path="res://day_and_night_cycle.gd" id="12_iotsf"]
+
+[sub_resource type="GDScript" id="GDScript_mfdv2"]
+script/source = "extends Node2D
+
+func _process(delta: float) -> void:
+	print($DayAndNightCycle.get_current_hour(), \"  \",
+$DayAndNightCycle.get_current_minute(), \"  \",
+$DayAndNightCycle.is_daytime())
+"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_flf07"]
 texture = ExtResource("2_iotsf")
@@ -133,7 +143,46 @@ sources/5 = SubResource("TileSetAtlasSource_ei405")
 sources/6 = SubResource("TileSetAtlasSource_e8dv2")
 sources/7 = SubResource("TileSetAtlasSource_2nhjh")
 
+[sub_resource type="Animation" id="Animation_mfdv2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_iotsf"]
+resource_name = "new_animation"
+length = 24.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 24),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0, 0.27899602, 0.5688904, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lc2xo"]
+_data = {
+&"RESET": SubResource("Animation_mfdv2"),
+&"new_animation": SubResource("Animation_iotsf")
+}
+
 [node name="Game" type="Node2D" unique_id=135457802]
+script = SubResource("GDScript_mfdv2")
 
 [node name="Player" parent="." unique_id=1812943038 instance=ExtResource("1_mfdv2")]
 position = Vector2(50, 76)
@@ -188,3 +237,10 @@ text = "Who are you?"
 [node name="Choice3" type="Button" parent="DialogueUI/DialoguePanel/VBoxContainer" unique_id=1873059763]
 layout_mode = 2
 text = "Sorry, my bad!"
+
+[node name="DayAndNightCycle" type="CanvasModulate" parent="." unique_id=929609948]
+script = ExtResource("12_iotsf")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="DayAndNightCycle" unique_id=820058934]
+libraries/ = SubResource("AnimationLibrary_lc2xo")
+autoplay = &"new_animation"

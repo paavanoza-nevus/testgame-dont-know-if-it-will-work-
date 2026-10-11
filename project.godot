@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Testgame(dont know if it will work)"
-run/main_scene="uid://cx2hp4cgo70kp"
+run/main_scene="uid://rl0ri7unxjwn"
 config/features=PackedStringArray("4.7", "Forward Plus")
 
 [autoload]
