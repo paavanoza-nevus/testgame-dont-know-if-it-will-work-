@@ -10,4 +10,6 @@ func _on_settings_pressed() -> void:
 	print("SETTINGS BUTTON FUNCTION RAN")
 # func _on_settings_pressed() -> void:
 	# print("Settings button clicked!")
-	
+func _input(event: InputEvent) -> void:
+	if event is InputEventMouseButton and event.pressed:
+		print("Mouse click detected")
